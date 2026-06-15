@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body {
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Arial, sans-serif;
+    overflow: hidden;
+  }
+  .escena {
+    width: 180px;
+    height: 180px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .anillo {
+    position: absolute;
+    border-radius: 50%;
+    border: 2px solid;
+  }
+  .anillo1 {
+    width: 100px;
+    height: 100px;
+    border-color: #c2d4f8;
+    animation: girar 5s linear infinite;
+  }
+  .anillo2 {
+    width: 140px;
+    height: 140px;
+    border-color: #e8f0fe;
+    animation: girar 9s linear infinite reverse;
+  }
+  .anillo3 {
+    width: 175px;
+    height: 175px;
+    border-color: #f0f4ff;
+    animation: girar 14s linear infinite;
+  }
+  .punto {
+    position: absolute;
+    border-radius: 50%;
+    top: -5px;
+    left: 50%;
+  }
+  .punto.azul {
+    width: 10px; height: 10px;
+    background: #1a73e8;
+    margin-left: -5px;
+    top: -5px;
+  }
+  .punto.oro {
+    width: 8px; height: 8px;
+    background: #f4a61c;
+    margin-left: -4px;
+    top: -4px;
+  }
+  .punto.blanco {
+    width: 6px; height: 6px;
+    background: #a8c4f0;
+    margin-left: -3px;
+    top: -3px;
+  }
+  .centro {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #e8f0fe;
+    border: 2px solid #c2d4f8;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 24px;
+    z-index: 10;
+    animation: pulso 3s ease-in-out infinite;
+  }
+  @keyframes girar {
+    from { transform: rotate(0deg); }
+    to   { transform: rotate(360deg); }
+  }
+  @keyframes pulso {
+    0%, 100% { transform: scale(1); }
+    50%       { transform: scale(1.08); }
+  }
+</style>
+</head>
+<body>
+  <div class="escena">
+    <div class="anillo anillo1"><div class="punto azul"></div></div>
+    <div class="anillo anillo2"><div class="punto oro"></div></div>
+    <div class="anillo anillo3"><div class="punto blanco"></div></div>
+    <div class="centro">🔭</div>
+  </div>
+</body>
+</html>
